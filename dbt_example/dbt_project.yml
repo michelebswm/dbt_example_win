@@ -22,6 +22,11 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+# Example de variaveis 
+vars:
+  ambiente: 'desenvolvimento'
+  data_minima: '2021-01-01'
+  schema_nome: 'desenvolvimento_schema'
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -50,3 +55,9 @@ seeds:
   dbt_example:
     schema: seeds
     tags: ['seeds']
+    delimiter: ','
+
+snapshots:
+  dbt_example:
+    schema: snapshots
+    tags: ['snapshots']

@@ -4,9 +4,9 @@ dbt_example:
       dbname: "{{ env_var('DBT_DBNAME') }}"
       host: "{{ env_var('DBT_HOST', 'localhost') }}"
       pass: "{{ env_var('DBT_PASS') }}"
-      port: 5432
+      port: "{{ env_var('DBT_PORT') | as_number}}"
       schema: public
-      threads: 1
+      threads: "{{ env_var('DBT_THREADS') | as_number}}"
       type: postgres
       user: "{{ env_var('DBT_USER') }}"
   target: dev
